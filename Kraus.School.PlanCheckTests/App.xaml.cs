@@ -1,5 +1,5 @@
 ﻿using ESAPIX.Bootstrapper;
-using Kraus.School.PlanCheck.Views;
+using Kraus.School.PlanCheckTests.Views;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -8,9 +8,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using ESAPIX.Common;
-using ESAPIX.Common.Args;
 
-namespace Kraus.School.PlanCheck
+namespace Kraus.School.PlanCheckTests
 {
     /// <summary>
     /// Interaction logic for App.xaml
@@ -23,9 +22,9 @@ namespace Kraus.School.PlanCheck
             base.OnStartup(e);
             var bs = new AppBootstrapper<MainView>(() => { return VMS.TPS.Common.Model.API.Application.CreateApplication(); });
             //You can use the following to load a context (for debugging purposes)
-            //args = ContextIO.ReadArgsFromFile(@"C: \Users\cwalker\Documents\prostate context\context.txt");
+            //args = ContextIO.ReadArgsFromFile(@"context.txt");
             //Might disable (uncomment) for plugin mode
-            bs.IsPatientSelectionEnabled = false;
+            //bs.IsPatientSelectionEnabled = false;
             bs.Run(args);
         }
 
