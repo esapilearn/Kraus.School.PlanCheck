@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using ESAPIX.Common;
+using ESAPIX.Common.Args;
 
 namespace Kraus.School.PlanCheck
 {
@@ -22,7 +23,7 @@ namespace Kraus.School.PlanCheck
             base.OnStartup(e);
             var bs = new AppBootstrapper<MainView>(() => { return VMS.TPS.Common.Model.API.Application.CreateApplication(); });
             //You can use the following to load a context (for debugging purposes)
-            //args = ContextIO.ReadArgsFromFile(@"context.txt");
+            args = ContextIO.ReadArgsFromFile(@"C: \Users\cwalker\Documents\prostate context\context.txt");
             //Might disable (uncomment) for plugin mode
             //bs.IsPatientSelectionEnabled = false;
             bs.Run(args);
