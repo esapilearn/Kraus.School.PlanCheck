@@ -25,7 +25,7 @@ namespace Kraus.School.PlanCheck
             //You can use the following to load a context (for debugging purposes)
             //args = ContextIO.ReadArgsFromFile(@"C: \Users\cwalker\Documents\prostate context\context.txt");
             //Might disable (uncomment) for plugin mode
-            bs.IsPatientSelectionEnabled = true;
+            bs.IsPatientSelectionEnabled = false;
             bs.Run(args);
         }
 
