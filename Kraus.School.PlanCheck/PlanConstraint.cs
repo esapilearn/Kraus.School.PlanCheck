@@ -27,7 +27,7 @@ namespace Kraus.School.PlanCheck
 
         public ConstraintResult Result
         {
-            get { return _result }
+            get { return _result; }
             set { _result = value; }
         }
 

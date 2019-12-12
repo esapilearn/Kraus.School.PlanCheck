@@ -21,8 +21,8 @@ namespace Kraus.School.PlanCheck
 
         public ConstraintResult Constrain(PlanningItem pi)
         {
-            
-            ConstraintResult constraintResult = new ConstraintResult()
+
+            throw new NotImplementedException();
 
         }
     }
