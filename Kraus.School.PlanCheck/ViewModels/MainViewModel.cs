@@ -16,6 +16,7 @@ namespace Kraus.School.PlanCheck.ViewModels
         public MainViewModel()
         {
             CreateConstraints();
+
             EvaluateCommand = new DelegateCommand(() =>
             {
                 foreach (var pc in Constraints)
@@ -37,8 +38,38 @@ namespace Kraus.School.PlanCheck.ViewModels
                 }
             });
 
-        }
+            //OnPlanChanged(VMS.GetValue(sac => sac.PlanSetup));
 
+            //VMS.Execute(sac => sac.PlanSetupChanged += OnPlanChanged);
+        }
+        /*
+        public void OnPlanChanged(PlanSetup ps)
+        {
+            VMS.Invoke(() =>
+            {
+                EvaluateCommand = new DelegateCommand(() =>
+                {
+                    foreach (var pc in Constraints)
+                    {
+                        var result = VMS.GetValue(sc =>
+                        {
+                            var canConstrain = pc.Constraint.CanConstrain(sc.PlanSetup);
+                            if (!canConstrain.IsSuccess)
+                            {
+                                return canConstrain;
+                            }
+                            else
+                            {
+                                return pc.Constraint.Constrain(sc.PlanSetup);
+                            }
+                        });
+
+                        pc.Result = result;
+                    }
+                });
+            });
+        }
+        */
         private void CreateConstraints()
         {
             Constraints.AddRange(new PlanConstraint[]
